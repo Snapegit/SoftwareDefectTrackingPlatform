@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.CeshiyongliDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.CeshiyongliEntity" id="ceshiyongliMap">
+        <result property="yonglimingcheng" column="yonglimingcheng"/>
+        <result property="yonglileibie" column="yonglileibie"/>
+        <result property="yonglitupian" column="yonglitupian"/>
+        <result property="yonglineirong" column="yonglineirong"/>
+        <result property="guanlianxiangmu" column="guanlianxiangmu"/>
+        <result property="yongliziliao" column="yongliziliao"/>
+        <result property="fabushijian" column="fabushijian"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.CeshiyongliVO" >
+		SELECT * FROM ceshiyongli  ceshiyongli         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.CeshiyongliVO" >
+		SELECT  ceshiyongli.* FROM ceshiyongli  ceshiyongli 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.CeshiyongliView" >
+
+		SELECT  ceshiyongli.* FROM ceshiyongli  ceshiyongli 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.CeshiyongliView" >
+		SELECT * FROM ceshiyongli  ceshiyongli <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>
